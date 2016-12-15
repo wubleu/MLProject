@@ -60,18 +60,28 @@
 \newcommand{\figureout}{\tre{Need to figure this out\\}}
 \newcommand{\N}{\mathbb{N}}
 
-
 \begin{document}
 \title{Playing Pong with Deep Reinforcement Learning}
 \author{Bobby Dorward, Ryan Wilson, and Eric Bell}
 \maketitle
 
-\section{Introduction}
+\section{Introduction and Background}
 %type here
 %percent signs are comments
 %type \section{section_name} for a new section
 %compile to see what it looks like
-
-
+\par 
+The history between artificial intelligence and gaming is long standing because short term choices give rise to long term sophistication.  For example, the moves possible in the game of Go are few, yet it took one of the most sophisticated machine learning algorithms to date to be able to perform sufficiently at this problem.  We aimed to revisit this relationship between machine learning and gaming in order to gain  facility with how machine learning, specifically deep neural networks, are used.
+\par
+We have trained our neural network through reinforcement learning, specifically through an implementation of Q-learning. [BOBBY PLS WRITE THIS SECTION SO ITS THE MATHINESS YOU WANT]
+\par
+Our algorithm interacts with the game through the OpenAI Gym, an environment that allows the programmer to interact with Atari games (as well as a few other simulations) such that a machine learning algorithm can be trained to play the game ("solve" the problem).  What this entails is that the Gym allows us to extract pixel data from the game, signal actions for the AI to take on a frame-by-frame basis, and collect feedback used to train the algorithm.  Our original goal when starting this project was to apply this network to the "DoomBasic-v0" but due to limitations, we decided to start with the smaller "Pong-v0" environment.  This environment 
+\section{Data}
+Cropping/difference frames/
+\section{Implementation}
+Line by line explanation of what the code does and looks like, how we realized Qlearning (decaying rate, epsilon, etc.)
+\section{Results and Discussion}
+Talk about topology/talk about problems the algorithms having and why that might be the case
+\section{Conclusion}
 
 \end{document}
