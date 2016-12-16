@@ -1,6 +1,8 @@
 \documentclass[12pt]{article}
 \usepackage{amssymb,amsfonts,amsthm,mathtools,float,color}
 \usepackage{caption,subcaption,tikz,gensymb,pgfplots}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
 \pgfplotsset{compat = newest}
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
@@ -82,7 +84,12 @@ As previously mentioned, the data we used as input into our deep network was the
 \par
 The first change we made was to grayscale the pixel values, thereby cutting the data we need to put into our network by three.  Essentially what this means is that we have averaged the three values of the RGB channel into one value for each pixel.  Next, we cropped the images being given to us by the OpenAI Gym in order to exclude all the pixels on the screen that weren't directly relevant to the frame-by-frame progression of the game: the scoreboard, the white edges, and the padding behind each paddle was cropped to minimize the input count of the network.  (Downsampling/Pooling?) Through this preprocessing, we were able to reduce the amount of inputs being taken for each frame to 20,800.
 \par
-Finally, since the game of pong does not consist of still images, but rather gains meaning through the motion of the game objects (two paddles and the ball), we needed to capture this motion using the pixel data.  We achieve this by extrapolating a difference frame between each subsequent pair of images, in which we subtract the first image from the second image.  Through this, we can train the algorithm with data that represents where the game objects have been and where they're going, zeroing out any unmoving (and thus irrelevant) pixels in the process.  It is because of these difference frames that we have limited the action that our AI can take; instead of the 5 actions that are available by default to the algorithm, we've limited it to only moving left and right.  This way, the algorithm is always able to see its own paddle because it's constantly in motion and therefore creating data on the difference frame.
+Finally, since the game of pong does not consist of still images, but rather gains meaning through the motion of the game objects (two paddles and the ball), we needed to capture this motion using the pixel data.  We achieve this by extrapolating a difference frame (shown below) between each subsequent pair of images, in which we subtract the first image from the second image.  Through this, we can train the algorithm with data that represents where the game objects have been and where they're going, zeroing out any unmoving (and thus irrelevant) pixels in the process.  It is because of these difference frames that we have limited the action that our AI can take; instead of the 5 actions that are available by default to the algorithm, we've limited it to only moving left and right.  This way, the algorithm is always able to see its own paddle because it's constantly in motion and therefore creating data on the difference frame.\newline
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.9]{env.png}
+\includegraphics[scale=0.5]{df.png}
+\end{figure}
 \section{Implementation}
 [4]
 Line by line explanation of what the code does and looks like, how we realized Qlearning (decaying rate, epsilon, etc.)
