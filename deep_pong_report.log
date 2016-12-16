@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  16 DEC 2016 09:45
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  16 DEC 2016 13:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -861,20 +861,20 @@ Package pdftex.def Info: images/df.png used on input line 112.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [2] [3 <./images/env.png> <./images/df.png>] [4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 146--147
+Underfull \hbox (badness 10000) in paragraph at lines 174--175
 []\OT1/cmr/m/n/12 https://medium.com/emergent-future/simple-reinforcement-learn
 ing-with-tensorflow-
  []
 
 [6] (./deep_pong_report.aux) ) 
 Here is how much of TeX's memory you used:
- 21619 strings out of 493315
- 486996 string characters out of 6137904
- 617152 words of memory out of 5000000
- 24649 multiletter control sequences out of 15000+600000
+ 22057 strings out of 493315
+ 500144 string characters out of 6137904
+ 618818 words of memory out of 5000000
+ 25087 multiletter control sequences out of 15000+600000
  12096 words of font info for 47 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 56i,11n,81p,2253b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,12n,81p,2253b,1828s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2013/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pub
@@ -885,7 +885,7 @@ sfonts/cm/cmr8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmsy6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy8.pfb>
-Output written on deep_pong_report.pdf (6 pages, 119297 bytes).
+Output written on deep_pong_report.pdf (6 pages, 120966 bytes).
 PDF statistics:
  67 PDF objects out of 1000 (max. 8388607)
  45 compressed objects within 1 object stream

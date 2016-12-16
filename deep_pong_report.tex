@@ -130,6 +130,34 @@ Despite much effort, our algorithm is not performing as expected: the large majo
 However, our difficulties are also partially due to the realization of pong in OpenAI Gym's environment.  The environment has your AI faced against a premade AI that is quite good at returning shots.  One particular facet of the AI that has posed problems for learning is its service pattern, which alternates between one of two spots (one on top, one on bottom) depending on whether the player returned the serve or not.  Due to this pattern, we could see our algorithm learning to start by moving to either the very top and very bottom of the screen and then struggle to learn to move to the other side after several points of missing the ball, which was being served in the same spot on the other side of the screen.  We tried to alleviate this by suppressing the learning rate and implementing a decaying learning rate that would hopefully minimize the effect these service problems had on the weights it learned during earlier training sessions.  Ideally, if we had the ability to alter the environment provided to us by the OpenAI Gym we would have pitted our algorithm against a more fair opponent: itself.  At the very least, altering the service pattern so that it served in a random direction rather than in the same direction every time would have potentially allowed for our algorithm to learn more easily.
 \par
 The ``Pong-v0" environment is not an impossible problem, and as a matter of fact, there exist several implementations that work well on the webpage of the problem \cite{pong}, but the difference between these implementations and our own is that the neural networks they used were more sophisticated than what our computational resources could handle.  For example, one of the solutions uses a convolutional neural network \cite{eval,conv}, and while we attempted to train one of these networks, training time was incredibly slow (~1.5 minutes for 1 iterations, which translates to 2.5 hours for 100 iterations), and creating a network of any significant size resulted in running out of memory.  In summary, in order for success to be achieved on this project, either we needed to alter the problem (opposing player AI), or gain access to more computational resources, such as the supercomputer.
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+xlabel = Game iteration,
+ylabel=Number of points won,
+legend pos = south east,
+scaled y ticks = false,
+yticklabel style={/pgf/number format/fixed,
+                     /pgf/number format/precision=3},
+]
+
+\addplot[color=blue,
+mark=*,
+] 
+coordinates { %replace the coordinates here (x,y)
+(0.6, 0.9164591000000002)
+(0.7, 0.9189093999999999)
+(0.8, 0.9209074999999999)
+(0.9, 0.9238435)
+};
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\caption{A graph of the number of points won on each game as training iterations increased with time}
+\label{proportion}
+\end{figure}
 \section{Conclusion}
 In order to teach a computer to play pong, we created a deep neural network that involved two fully connected hidden layers as well as learning rate decay.  However, due to technical and temporal limitations, we were not able to train the algorithm to be able to win the game.  Given more time and more resources, we could have done more hyperparameter experimentation and potentially implement more sophisticated algorithms such as convolutional neural networks that might offer more definitive results.
 
