@@ -1,0 +1,9 @@
+Written by Bobby Dorward, Ryan Wilson, and Eric Bell
+12/16/16
+
+deep_pong.py is a python 3 program dependent on numpy, Tensorflow, and OpenAI Gym that trains a deep neural network to play pong.
+
+Runtime format:
+python3 deep_pong.py
+
+No bugs are known, but the algorithm does not perform as well as we would have hoped due to technical limitations.
